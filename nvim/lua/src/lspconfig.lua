@@ -1,3 +1,27 @@
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+--
+local util = require 'vim.lsp.util'
+
+local formatting_callback = function(client, bufnr)
+  vim.keymap.set('n', '<leader>f', function()
+    local params = util.make_formatting_params({})
+    client.request('textDocument/formatting', params, nil, bufnr) 
+  end, {buffer = bufnr})
+end
+
+local cmp = require("cmp")
+local lspkind = require("lspkind")
+--
+
+cmp.setup({
+	sources = {
+		{ name = "nvim_lsp" },
+		{ name = "buffer" },
+	},
+})
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -32,18 +56,22 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
 require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
 require('lspconfig')['tsserver'].setup{
-    on_attach = on_attach,
+    capabilities=capabilities,
+    on_attach = function(client, bufnr)
+      -- we don't want to invoke tsserver when formatting on save
+      client.resolved_capabilities.document_formatting = false
+      -- protecting against future bugs vim 8.0+
+      client.server_capabilities.documentFormattingProvider = false
+      client.server_capabilities.documentRangeFormattingProvider = false
+    end,
     flags = lsp_flags,
 }
+
 require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
@@ -52,4 +80,3 @@ require('lspconfig')['rust_analyzer'].setup{
       ["rust-analyzer"] = {}
     }
 }
-

@@ -29,21 +29,19 @@ return require("null-ls").setup({
     -- null_ls.builtins.diagnostics.vale,
   },
   on_attach = function(client, bufnr)
-    if client.name == "tsserver" then                                                                                                   
-      client.resolved_capabilities.document_formatting = false -- 0.7 and earlier
-      client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
-    end
-    if client.supports_method 'textDocument/formatting' then
-      vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
-      vim.api.nvim_create_autocmd('BufWritePre', {
-        group = augroup,
-        buffer = bufnr,
-        callback = function()
-          -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-          -- vim.lsp.buf.formatting_sync()
-          lsp_formatting(bufnr)
-        end,
-      })
+    if client.name == "null-ls" then                                                                                                   
+      if client.supports_method 'textDocument/formatting' then
+        vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+        vim.api.nvim_create_autocmd('BufWritePre', {
+          group = augroup,
+          buffer = bufnr,
+          callback = function()
+            -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+            -- vim.lsp.buf.formatting_sync()
+            lsp_formatting(bufnr)
+          end,
+        })
+      end
     end
   end,
 })

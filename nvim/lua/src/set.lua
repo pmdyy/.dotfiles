@@ -1,3 +1,6 @@
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
