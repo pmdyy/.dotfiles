@@ -6,7 +6,18 @@ return require('packer').startup(function()
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  use("neovim/nvim-lspconfig")
+  use('neovim/nvim-lspconfig')
+  use({
+      "jose-elias-alvarez/null-ls.nvim",
+      config = function()
+          require("null-ls").setup()
+      end,
+      requires = { "nvim-lua/plenary.nvim" },
+  })
+
+  -- Prettier
+  -- use('mhartington/formatter.nvim')
+  -- use('sbdchd/neoformat')
 
   -- Comments
   use {
