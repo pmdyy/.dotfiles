@@ -21,7 +21,7 @@ return require("null-ls").setup({
             }
         }, null_ls.builtins.formatting.autopep8,
         null_ls.builtins.formatting.lua_format,
-        null_ls.builtins.formatting.shfmt.with {extra_args = {'-i', '4'}},
+        null_ls.builtins.formatting.beautysh,
         null_ls.builtins.diagnostics.gitlint.with {
             extra_args = {
                 '--contrib=contrib-title-conventional-commits',
