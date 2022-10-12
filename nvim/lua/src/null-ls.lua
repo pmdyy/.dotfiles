@@ -14,6 +14,9 @@ end
 return require("null-ls").setup({
     sources = {
         null_ls.builtins.formatting.deno_fmt.with {
+            filetypes = {
+                'javascript', 'javascriptreact', 'typescript', 'typescriptreact'
+            },
             extra_args = {'--options-single-quote'}
         }, null_ls.builtins.formatting.prettier.with {
             disabled_filetypes = {
@@ -21,6 +24,7 @@ return require("null-ls").setup({
             }
         }, null_ls.builtins.formatting.autopep8,
         null_ls.builtins.formatting.lua_format,
+        null_ls.builtins.formatting.clang_format,
         null_ls.builtins.formatting.beautysh,
         null_ls.builtins.diagnostics.gitlint.with {
             extra_args = {

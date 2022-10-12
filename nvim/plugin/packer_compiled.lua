@@ -170,11 +170,6 @@ _G.packer_plugins = {
     path = "/home/mike/.local/share/nvim/site/pack/packer/start/nvim-magic",
     url = "https://github.com/jameshiew/nvim-magic"
   },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/mike/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/nvim-tree/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/mike/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -242,8 +237,10 @@ _G.packer_plugins = {
   },
   ["zen-mode.nvim"] = {
     config = { "\27LJ\2\2\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0ž\3\1\0\4\0\21\0\0256\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\6\0005\2\3\0005\3\4\0=\3\5\2=\2\a\0015\2\t\0005\3\b\0=\3\5\0025\3\n\0=\3\v\0025\3\f\0=\3\r\0025\3\14\0=\3\15\2=\2\16\0013\2\17\0=\2\18\0013\2\19\0=\2\20\1B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\nkitty\1\0\2\fenabled\1\tfont\a+4\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\fenabled\2\nruler\1\fshowcmd\1\vwindow\1\0\0\foptions\1\0\b\17cursorcolumn\1\15signcolumn\ano\15foldcolumn\0060\tlist\1\16colorcolumn\0060\15cursorline\1\19relativenumber\1\vnumber\1\1\0\3\vheight\3\1\nwidth\3x\rbackdrop\4æÌ™³\6æÌ¹ÿ\3\nsetup\rzen-mode\frequire\0" },
-    loaded = true,
-    path = "/home/mike/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/mike/.local/share/nvim/site/pack/packer/opt/zen-mode.nvim",
     url = "https://github.com/folke/zen-mode.nvim"
   }
 }
@@ -281,26 +278,22 @@ end
 time([[Config for mason.nvim]], true)
 try_loadstring("\27LJ\2\0023\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nmason\frequire\0", "config", "mason.nvim")
 time([[Config for mason.nvim]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\2¹\1\0\0\3\0\6\0\t6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0005\2\4\0=\2\5\1B\0\2\1K\0\1\0\15float_opts\1\0\1\vborder\vcurved\1\0\5\20shade_terminals\2\22terminal_mappings\2\20insert_mappings\2\14direction\nfloat\20start_in_insert\2\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
-time([[Config for toggleterm.nvim]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-try_loadstring("\27LJ\2\2\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0ž\3\1\0\4\0\21\0\0256\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\6\0005\2\3\0005\3\4\0=\3\5\2=\2\a\0015\2\t\0005\3\b\0=\3\5\0025\3\n\0=\3\v\0025\3\f\0=\3\r\0025\3\14\0=\3\15\2=\2\16\0013\2\17\0=\2\18\0013\2\19\0=\2\20\1B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\nkitty\1\0\2\fenabled\1\tfont\a+4\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\fenabled\2\nruler\1\fshowcmd\1\vwindow\1\0\0\foptions\1\0\b\17cursorcolumn\1\15signcolumn\ano\15foldcolumn\0060\tlist\1\16colorcolumn\0060\15cursorline\1\19relativenumber\1\vnumber\1\1\0\3\vheight\3\1\nwidth\3x\rbackdrop\4æÌ™³\6æÌ¹ÿ\3\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
-time([[Config for zen-mode.nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\0026\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: null-ls.nvim
-time([[Config for null-ls.nvim]], true)
-try_loadstring("\27LJ\2\0025\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fnull-ls\frequire\0", "config", "null-ls.nvim")
-time([[Config for null-ls.nvim]], false)
+-- Config for: twilight.nvim
+time([[Config for twilight.nvim]], true)
+try_loadstring("\27LJ\2\2:\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
+time([[Config for twilight.nvim]], false)
 -- Config for: nvim-magic
 time([[Config for nvim-magic]], true)
 try_loadstring("\27LJ\2\0028\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15nvim-magic\frequire\0", "config", "nvim-magic")
 time([[Config for nvim-magic]], false)
+-- Config for: null-ls.nvim
+time([[Config for null-ls.nvim]], true)
+try_loadstring("\27LJ\2\0025\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fnull-ls\frequire\0", "config", "null-ls.nvim")
+time([[Config for null-ls.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\2 \1\0\0\4\0\a\0\r6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\5\0006\2\0\0'\3\3\0B\2\2\0029\2\4\2B\2\1\2=\2\6\1B\0\2\1K\0\1\0\rpre_hook\1\0\0\20create_pre_hook7ts_context_commentstring.integrations.comment_nvim\nsetup\fComment\frequire\0", "config", "Comment.nvim")
@@ -309,10 +302,17 @@ time([[Config for Comment.nvim]], false)
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\2@\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
--- Config for: twilight.nvim
-time([[Config for twilight.nvim]], true)
-try_loadstring("\27LJ\2\2:\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
-time([[Config for twilight.nvim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\2\2¹\1\0\0\3\0\6\0\t6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0005\2\4\0=\2\5\1B\0\2\1K\0\1\0\15float_opts\1\0\1\vborder\vcurved\1\0\5\20shade_terminals\2\22terminal_mappings\2\20insert_mappings\2\14direction\nfloat\20start_in_insert\2\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'zen-mode.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

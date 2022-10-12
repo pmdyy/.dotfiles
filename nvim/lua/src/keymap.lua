@@ -21,4 +21,4 @@ keymap('t', '<c-t>', '<C-\\><C-n>:q<CR>', {})
 keymap('n', 'z', ':ZenMode<CR>', {})
 
 -- NvimTree, map :NvimTreeToggle command on 'Ctrl+e'
-keymap('n', '<c-u>', ':NvimTreeToggle<cr>', opts)
+keymap('n', '<c-p>', ':Neotree<cr>', opts)

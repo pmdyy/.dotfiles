@@ -61,14 +61,6 @@ return require('packer').startup(function()
     }
     use 'JoosepAlviste/nvim-ts-context-commentstring'
 
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons' -- optional, for file icons
-        }
-        -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
-    }
-
     use({
         "kyazdani42/nvim-web-devicons",
         module = "nvim-web-devicons",

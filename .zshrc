@@ -3,6 +3,10 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export OPENAI_API_KEY="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"
+export DENO_INSTALL="/home/$USER/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -71,8 +75,8 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  zsh-autosuggestions
+    git
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -102,3 +106,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# bun completions
+[ -s "/home/mike/.bun/_bun" ] && source "/home/mike/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/mike/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
