@@ -92,24 +92,13 @@ return require('packer').startup(function()
     vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
     use {
-      'nvim-tree/nvim-tree.lua',
-      config = function() 
-        require("nvim-tree").setup()
-      end,
-      requires = {
-        'nvim-tree/nvim-web-devicons', -- optional, for file icons
-      },
-      tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v2.x",
+        requires = {
+            "nvim-lua/plenary.nvim", "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim"
+        }
     }
-
-    -- use {
-    --     "nvim-neo-tree/neo-tree.nvim",
-    --     branch = "v2.x",
-    --     requires = {
-    --         "nvim-lua/plenary.nvim", "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-    --         "MunifTanjim/nui.nvim"
-    --     }
-    -- }
 
     use {
         "folke/twilight.nvim",
